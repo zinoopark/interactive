@@ -25,6 +25,15 @@ export class Sun {
     }
 
     draw(ctx, t) {
+        if (!this.time) {
+            this.time = t;
+        }
+
+        const now = t - this.time;
+        if (now > this.fpsTime) {
+            this.time = t;
+            this.updatePoints();
+        }
         ctx.fillStyle = '#ffb200';
         ctx.beginPath(); 
         let pos = this.pos[0];
@@ -50,10 +59,10 @@ export class Sun {
         return Math.random() * max;
     }
 
-    getCirclePoint( radius, t) {
+    getCirclePoint(radius, t) {
         const theta = Math.PI * 2 * t;
 
-        return{
+        return {
             x: (Math.cos(theta) * radius),
             y: (Math.sin(theta) * radius)
         };
