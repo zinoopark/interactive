@@ -5,11 +5,11 @@ export class Sheep{
         this.totalFrame = 8;
         this.curFrame = 0;
 
-        this.imgWidth = 360;
-        this.imgHeight = 300;
+        this.imgWidth =  1112;
+        this.imgHeight = 910;
 
-        this.sheepWidth = 180;
-        this.sheepHeight = 150;
+        this.sheepWidth = 556;
+        this.sheepHeight = 405;
 
         this.sheepWidthHalf = this.sheepWidth /2;
         this.x = stageWidth + this.sheepWidth;
